@@ -1,0 +1,5 @@
+# Process queued workflows once per minute when a long-running worker is unavailable.
+* * * * * cd /srv/patchbay && /usr/bin/php cli/worker.php --once >/dev/null 2>&1
+
+# Prune expired event history daily.
+17 3 * * * cd /srv/patchbay && /usr/bin/php cli/prune.php >/dev/null 2>&1
