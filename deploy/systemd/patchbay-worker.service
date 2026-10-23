@@ -1,0 +1,16 @@
+[Unit]
+Description=Patchbay workflow worker
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/srv/patchbay
+ExecStart=/usr/bin/php /srv/patchbay/cli/worker.php
+Restart=always
+RestartSec=3
+User=www-data
+Group=www-data
+Environment=APP_ENV=production
+
+[Install]
+WantedBy=multi-user.target
