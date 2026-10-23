@@ -1,0 +1,8 @@
+/srv/patchbay/storage/logs/*.log {
+    daily
+    rotate 14
+    compress
+    missingok
+    notifempty
+    create 0640 www-data www-data
+}
