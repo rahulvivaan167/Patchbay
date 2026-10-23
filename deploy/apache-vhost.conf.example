@@ -1,0 +1,11 @@
+<VirtualHost *:443>
+    ServerName patchbay.example.com
+    DocumentRoot /srv/patchbay/public
+
+    <Directory /srv/patchbay/public>
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    SetEnvIf Authorization "(.+)" HTTP_AUTHORIZATION=$1
+</VirtualHost>
